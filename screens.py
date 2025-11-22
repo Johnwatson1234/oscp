@@ -27,9 +27,6 @@ class BaseScreen:
         pass
 
 
-
-
-
 class LoginScreen(BaseScreen):
     def __init__(self, app):
         super().__init__(app)

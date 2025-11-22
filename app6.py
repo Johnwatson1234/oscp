@@ -13,6 +13,7 @@ class App:
         pygame.display.set_caption("操作系统算法可视化教学系统 (Pygame)")
         self.w = width
         self.h = height
+        # 创建主屏幕
         self.screen = pygame.display.set_mode((self.w, self.h))
         self.clock = pygame.time.Clock()
         self.font_path = self._detect_font()
@@ -64,9 +65,10 @@ class App:
         self.toast_color = DANGER if danger else SUCCESS
 
     def launch_cpp_visualization(self, thread_count=8):
-        exe_path = os.path.abspath("Multithreading.exe")
+        exe_path = os.path.abspath("multithreading.exe")
+        exe_path = os.path.abspath("m4.exe")
         if not os.path.exists(exe_path):
-            self.toast("未找到 Multithreading.exe", danger=True)
+            self.toast("未找到 multithreading.exe", danger=True)
             return
         creation_flags = 0
         if sys.platform.startswith("win"):

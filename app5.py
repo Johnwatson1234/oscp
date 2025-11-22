@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 按esc键退出ai页面
+# 按esc键退出ai页面,但登录界面按esc键无效
 import pygame, sys, os, subprocess
 from screens import LoginScreen, MenuScreen, PageReplacementScreen, BankerScreen
 from ai3 import AIChatScreen
