@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# ai.py
 import os
 import pygame
 import threading

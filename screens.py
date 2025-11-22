@@ -27,6 +27,9 @@ class BaseScreen:
         pass
 
 
+
+
+
 class LoginScreen(BaseScreen):
     def __init__(self, app):
         super().__init__(app)
@@ -41,7 +44,7 @@ class LoginScreen(BaseScreen):
     def try_login(self):
         username = self.user_field.get_value()
         password = self.pass_field.get_value()
-        if username == "admin" and password == "123456":
+        if username == "admin" and password == "admin":
             self.app.launch_cpp_visualization()
             self.app.set_screen("menu")
         else:
@@ -51,6 +54,9 @@ class LoginScreen(BaseScreen):
         self.user_field.handle_event(ev)
         self.pass_field.handle_event(ev)
         self.login_btn.handle_event(ev)
+        if ev.type == pygame.KEYDOWN:
+            if ev.key == pygame.K_RETURN:
+                self.try_login()
 
     def draw(self, surf):
         draw_vertical_gradient(surf, (30, 34, 42), (15, 17, 21))
@@ -60,7 +66,7 @@ class LoginScreen(BaseScreen):
         self.user_field.draw(surf)
         self.pass_field.draw(surf)
         self.login_btn.draw(surf)
-        tip = self.tip_font.render("账号：admin  密码：123456", True, TEXT_DIM)
+        tip = self.tip_font.render("账号：admin  密码：admin", True, TEXT_DIM)
         surf.blit(tip, (self.app.w / 2 - tip.get_width() / 2, self.app.h / 2 + 155))
 
 
